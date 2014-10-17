@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Excel -> HTML Link Builder</title>	
+	
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div id="header">
+	<h2>Excel -> HTML Link Builder</h2>
+</div>
+ 
+<div id="content">
+<p>Upload an Excel file with four columns: Chapter, Title, Link, and Description. They must be in that order. The sheet should look like this:</p>
+<p><img id="sample" src="sample.png" /></p>
+<p>After submitting, a zip file containing HTML by chapter will be automatically downloaded.</p>
+	<form action="do.php" method="post" enctype="multipart/form-data">
+		<input type="file" name="file" id="file">
+		<input type="submit" name="submit" value="Download Links" id="submit" disabled='true'>
+	</form>	
+</div>
+<script>
+document.getElementById("file").onchange = function() {
+    if(this.value) {
+        document.getElementById("submit").disabled = false; 
+    }  
+}
+</script>
+</body>
+</html>
